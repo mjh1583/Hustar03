@@ -3,4 +3,8 @@
     <string name="name">Enter your name : </string>
     <string name="job">Job</string>
     <string name="home">Home</string>
+    <string name="id">ID</string>
+    <string name="pw">PW</string>
+    <string name="signup">가입</string>
+    <string name="joinus">회원가입</string>
 </resources>

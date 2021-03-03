@@ -12,7 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
         //사용자에게 보여지는 화면 설정
         //setContentView(R.layout.activity_main);
-        setContentView(R.layout.layout_linear);
+        //setContentView(R.layout.layout_linear);
+        setContentView(R.layout.join);
 
     }
 
