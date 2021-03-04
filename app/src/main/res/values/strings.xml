@@ -13,4 +13,18 @@
     <string name="red">red</string>
     <string name="blue">blue</string>
     <string name="random">random</string>
+    <string name="aboveBTN">ABOVE</string>
+    <string name="right">RIGHT</string>
+    <string name="left">LEFT</string>
+    <string name="center">Center</string>
+    <string name="bottom">BOTTOM</string>
+    <string name="image_icon">ICON</string>
+    <string name="name_profile">홍길동</string>
+    <string name="profile_description">안녕하세요. 잘 지내시는 지요?</string>
+    <string name="date">21.03.04</string>
+    <string name="one">ONE</string>
+    <string name="two">TWO</string>
+    <string name="three">THREE</string>
+    <string name="four">FOUR</string>
+    <string name="five">FIVE</string>
 </resources>

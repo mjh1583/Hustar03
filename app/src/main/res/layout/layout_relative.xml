@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/centerBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/center" />
+
+    <Button
+        android:id="@+id/aboveBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/centerBTN"
+        android:layout_alignEnd="@id/centerBTN"
+        android:text="@string/aboveBTN" />
+
+    <Button
+        android:id="@+id/rightBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/centerBTN"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/centerBTN"
+        android:text="@string/right" />
+
+    <Button
+        android:id="@+id/leftBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/centerBTN"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@id/centerBTN"
+        android:text="@string/left" />
+
+    <Button
+        android:id="@+id/bottomBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/centerBTN"
+        android:layout_alignStart="@id/centerBTN"
+        android:text="@string/bottom" />
+</RelativeLayout>

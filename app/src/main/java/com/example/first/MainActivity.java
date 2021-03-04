@@ -1,4 +1,3 @@
-
 package com.example.first;
 
 import android.graphics.Color;
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         // setContentView(R.layout.layout_linear);
         setContentView(R.layout.join);
         //setContentView(R.layout.change_bgcolor);
+        //setContentView(R.layout.activity_lab4_2);
 
         // 디버깅을 위한 로그 출력
         Log.i(TAG, "onCreate()");
