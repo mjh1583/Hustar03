@@ -7,4 +7,9 @@
     <string name="pw">PW</string>
     <string name="signup">가입</string>
     <string name="joinus">회원가입</string>
+    <string name="add">+</string>
+    <string name="divide">/</string>
+    <string name="title_bgcolor_edittext">배경화면 색 바꾸기</string>
+    <string name="red">red</string>
+    <string name="blue">blue</string>
 </resources>
