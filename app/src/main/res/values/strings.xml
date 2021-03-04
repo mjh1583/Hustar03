@@ -12,4 +12,5 @@
     <string name="title_bgcolor_edittext">배경화면 색 바꾸기</string>
     <string name="red">red</string>
     <string name="blue">blue</string>
+    <string name="random">random</string>
 </resources>

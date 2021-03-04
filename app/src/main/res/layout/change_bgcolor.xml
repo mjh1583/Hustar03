@@ -14,6 +14,7 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:gravity="center"
+        android:onClick="clickFunc"
         android:text="@string/title_bgcolor_edittext"
         android:textSize="30sp" />
 
@@ -41,5 +42,14 @@
             android:layout_margin="10dp"
             android:onClick="clickFunc"
             android:text="@string/blue" />
+
+        <Button
+            android:id="@+id/random_color"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="clickFunc"
+            android:text="@string/random" />
     </LinearLayout>
 </LinearLayout>
