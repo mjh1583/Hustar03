@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Exam_Resource</string>
+    <string name="msg">Enter message</string>
+    <string name="nothing">NOTHING~!!!</string>
+    <string name="cat">Cute Cat</string>
+    <string name="change">CHANGE</string>
+</resources>
