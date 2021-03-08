@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ImageViewer</string>
+    <string name="imageviwer">IMAGE VIEWER</string>
+    <string name="cat">cat</string>
 </resources>
