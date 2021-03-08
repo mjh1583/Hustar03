@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(MainActivity.this, "주소가 추가되었습니다!", Toast.LENGTH_SHORT).show();
             initETXT();
+            showAddress();
+            IDX++;
         }
         // 주소록 삭제
         else if(v.getId() == deleteBTN.getId()) {
