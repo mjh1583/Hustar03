@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // 화면을 클릭(터치)하면 이미지 리스트로 넘어감 == 인트로 화면
     public void onClick(View v) {
         Intent intro = new Intent(MainActivity.this, ImageList.class);
 
