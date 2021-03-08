@@ -55,7 +55,7 @@
         android:contentDescription="@string/cat"
         android:onClick="onClick"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/cat5" />
+        app:srcCompat="@drawable/cat3" />
 
     <ImageView
         android:id="@+id/imageView4"
