@@ -48,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onClick"
-            android:text="@string/modify" />
+            android:text="@string/modify"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

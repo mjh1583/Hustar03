@@ -60,52 +60,34 @@ public class SettingActivity extends AppCompatActivity {
         wifiCBTN = findViewById(R.id.wifiCBTN);
 
         // 입력 막기
-        //idETXT.setInputType(InputType.TYPE_NULL);
         idETXT.setEnabled(false);
 
-        // 라디오 버튼 중 하나라도 체크되어 있다면
-        if(whiteRBTN.isChecked() || darkRBTN.isChecked() || blueRBTN.isChecked()) {
-            themeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if(checkedId != 0) {
-                        rBTN = findViewById(checkedId);
-
-                        if(rBTN.isChecked())
-                            theme = rBTN.getText().toString();
-                        else
-                            return;
-                    }
+        whiteRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    theme = whiteRBTN.getText().toString();
                 }
-            });
-        }
+            }
+        });
 
-//        whiteRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if(isChecked) {
-//                    theme = whiteRBTN.getText().toString();
-//                }
-//            }
-//        });
-//
-//        darkRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if(isChecked) {
-//                    theme = darkRBTN.getText().toString();
-//                }
-//            }
-//        });
-//
-//        blueRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if(isChecked) {
-//                    theme = blueRBTN.getText().toString();
-//                }
-//            }
-//        });
+        darkRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    theme = darkRBTN.getText().toString();
+                }
+            }
+        });
+
+        blueRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    theme = blueRBTN.getText().toString();
+                }
+            }
+        });
 
         asCBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
