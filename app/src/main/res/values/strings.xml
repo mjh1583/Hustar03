@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">exam_event</string>
+    <string name="check_item">check-item</string>
+    <string name="red">RED</string>
+    <string name="blue">BLUE</string>
+    <string name="radio_title">[ Select Color ]</string>
+    <string name="name">Enter Name</string>
+</resources>
