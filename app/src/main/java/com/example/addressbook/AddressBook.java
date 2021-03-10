@@ -1,12 +1,14 @@
 package com.example.addressbook;
 
-public class Address {
+public class AddressBook {
 
     private String name;
+
     private String phone;
+
     private String email;
 
-    public Address(String name, String phone, String email) {
+    public AddressBook(String name, String phone, String email) {
         this.name = name;
         this.phone = phone;
         this.email = email;

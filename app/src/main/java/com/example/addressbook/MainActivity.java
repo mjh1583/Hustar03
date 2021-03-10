@@ -1,8 +1,8 @@
 package com.example.addressbook;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView phoneTXT;
     private TextView emailTXT;
 
-    private ArrayList<Address> addressArrayList = new ArrayList<>();
-    private Address address;
+    private AddressBook addressBook;
+    private ArrayList<AddressBook> addressBookArrayList = new ArrayList<>();
 
     private int IDX = 0;  // ArrayList의 인덱스
 
@@ -63,34 +63,34 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "이름, 휴대폰 번호, 이메일 주소 모두 입력해야 합니다!", Toast.LENGTH_SHORT).show();
                 return;
             }
-            address = new Address(name, phone, email);
-            addressArrayList.add(address);
+            addressBook = new AddressBook(name, phone, email);
+            addressBookArrayList.add(addressBook);
 
             Toast.makeText(MainActivity.this, "주소가 추가되었습니다!", Toast.LENGTH_SHORT).show();
             initETXT();
-            IDX = addressArrayList.size() - 1;
+            IDX = addressBookArrayList.size() - 1;
             showAddress();
             IDX++;
         }
         // 주소록 삭제
         else if(v.getId() == deleteBTN.getId()) {
-            if(addressArrayList.size() == 0) {
+            if(addressBookArrayList.size() == 0) {
                 Toast.makeText(MainActivity.this, "등록된 주소록이 없습니다!", Toast.LENGTH_SHORT).show();
                 return;
             }
             else {
-                if(addressArrayList.size() == 1) {  // 주소록이 하나만 있을 때
+                if(addressBookArrayList.size() == 1) {  // 주소록이 하나만 있을 때
                     IDX = 0;
-                    addressArrayList.remove(0);
+                    addressBookArrayList.remove(0);
                     initTXT();
                 }
-                else if(addressArrayList.size() == IDX) {  // ArrayList의 마지막 인덱스 요소 삭제
-                    addressArrayList.remove(IDX - 1);
+                else if(addressBookArrayList.size() == IDX) {  // ArrayList의 마지막 인덱스 요소 삭제
+                    addressBookArrayList.remove(IDX - 1);
                     IDX = IDX - 2;
                     showAddress();
                 }
                 else {
-                    addressArrayList.remove(IDX - 1);
+                    addressBookArrayList.remove(IDX - 1);
                     IDX = IDX - 1;
                     showAddress();
                 }
@@ -100,11 +100,11 @@ public class MainActivity extends AppCompatActivity {
         }
         // 주소록 나타내기
         else if(v.getId() == nextBTN.getId()) {
-            if(addressArrayList.size() == 0) {
+            if(addressBookArrayList.size() == 0) {
                 Toast.makeText(MainActivity.this, "등록된 주소록이 없습니다!", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if(addressArrayList.size() == IDX) {
+            if(addressBookArrayList.size() == IDX) {
                 IDX = 0;
             }
             showAddress();
@@ -114,11 +114,11 @@ public class MainActivity extends AppCompatActivity {
 
     // 주소록을 textView에 보여주는 함수
     public void showAddress() {
-        if(addressArrayList.size() != 0) {
-            address = addressArrayList.get(IDX);
-            nameTXT.setText(address.getName());
-            phoneTXT.setText(address.getPhone());
-            emailTXT.setText(address.getEmail());
+        if(addressBookArrayList.size() != 0) {
+            addressBook = addressBookArrayList.get(IDX);
+            nameTXT.setText(addressBook.getName());
+            phoneTXT.setText(addressBook.getPhone());
+            emailTXT.setText(addressBook.getEmail());
         }
         else {
             Toast.makeText(MainActivity.this, "등록된 주소록이 없습니다!", Toast.LENGTH_SHORT).show();
