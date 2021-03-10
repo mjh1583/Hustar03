@@ -9,4 +9,16 @@
     <string name="nothing">Nothing</string>
     <string name="add_msg">You must enter three items.</string>
     <string name="del_msg">Don\'t exist item.</string>
+    <string name="userId">USER ID</string>
+    <string name="white">WHITE</string>
+    <string name="dark">DARK</string>
+    <string name="blue">BLUE</string>
+    <string name="theme">THEME</string>
+    <string name="auto_save">Auto Save</string>
+    <string name="auto_connect_wifi">Auto Connect WIFI</string>
+    <string name="select">SELECT</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="modify">Modify</string>
+    <string name="setting">SETTING</string>
 </resources>
