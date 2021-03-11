@@ -25,7 +25,6 @@ public class SettingActivity extends AppCompatActivity {
     private RadioButton whiteRBTN;
     private RadioButton darkRBTN;
     private RadioButton blueRBTN;
-    private RadioButton rBTN;
 
     private CheckBox asCBTN;
     private CheckBox wifiCBTN;
@@ -65,27 +64,30 @@ public class SettingActivity extends AppCompatActivity {
         whiteRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked) {
+                if(isChecked)
                     theme = whiteRBTN.getText().toString();
-                }
+                else
+                    theme = "";
             }
         });
 
         darkRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked) {
+                if(isChecked)
                     theme = darkRBTN.getText().toString();
-                }
+                else
+                    theme = "";
             }
         });
 
         blueRBTN.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked) {
+                if(isChecked)
                     theme = blueRBTN.getText().toString();
-                }
+                else
+                    theme = "";
             }
         });
 
