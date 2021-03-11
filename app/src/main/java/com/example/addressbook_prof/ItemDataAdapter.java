@@ -3,6 +3,7 @@ package com.example.addressbook_prof;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,16 +43,27 @@ public class ItemDataAdapter extends ArrayAdapter<ItemData> {
 
         // 1. item layout xml ==> Java 객체로 변환
         // 항목 layout 초기화 => MainActivity의 setContentView()와 비슷한 역할
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(layoutResId, null);
+        if(convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(
+                    Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(layoutResId, null);
 
-        // 2. item layout's view 객체 가져오기
+            ItemDataHolder holder = new ItemDataHolder(convertView);
+            convertView.setTag(holder);
+        }
+
+        ItemDataHolder holder = (ItemDataHolder) convertView.getTag();
+
+        // 2. item layout's view 객체 가져오기  ==> ItemDataHolder 클래스에서 진행
         // View 획득
-        TextView nameTXT = convertView.findViewById(R.id.nameTXT);
-        TextView phoneTXT = convertView.findViewById(R.id.phoneTXT);
-        TextView emailTXT = convertView.findViewById(R.id.emailTXT);
-        ImageView iconIMG = convertView.findViewById(R.id.iconIMG);
+//        TextView nameTXT = convertView.findViewById(R.id.nameTXT);
+//        TextView phoneTXT = convertView.findViewById(R.id.phoneTXT);
+//        TextView emailTXT = convertView.findViewById(R.id.emailTXT);
+//        ImageView iconIMG = convertView.findViewById(R.id.iconIMG);
+        TextView nameTXT = holder.nameTXT;
+        TextView phoneTXT = holder.phoneTXT;
+        TextView emailTXT = holder.emailTXT;
+        ImageView iconIMG =  holder.iconIMG;
 
         // 3. Data 준비
         // 항목 데이터 획득
