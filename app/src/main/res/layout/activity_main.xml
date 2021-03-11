@@ -118,12 +118,9 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/addressTXT"
+    <ListView
+        android:id="@+id/addressLST"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#E8F5E9"
-        android:padding="5dp"
-        android:text="@string/nothing" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
