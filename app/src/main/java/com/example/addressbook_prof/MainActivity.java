@@ -62,9 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     data.put("email", emailETXT.getText().toString());
                     addressesList.add(data);
 
-                    adapter.notifyDataSetChanged();
-
-                    Log.i(TAG, "add => " + addressesList.size());
+                    //Log.i(TAG, "add => " + addressesList.size());
                     // 3개 입력 필드 초기화 (지우기)
                     initETXT();
                 }
@@ -73,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, R.string.add_msg, Toast.LENGTH_SHORT).show();
                 }
 
-                // 입력 후 ADD 버튼 클릭 시 SoftKeyBoard 숨기기 설정
+                // 입력 후 ADD 버튼 클릭 시 So
                 imm.hideSoftInputFromWindow(nameETXT.getWindowToken(), 0);
                 break;
             case R.id.delBTN :
@@ -82,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                     int lastIdx = addressesList.size() - 1;
                     addressesList.remove(lastIdx);
 
-                    adapter.notifyDataSetChanged();
                 }
                 else {
                     // 사용자에게 알림 띄우기
@@ -90,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
+        // ListView 변경사항 반영하여 재출력
+        adapter.notifyDataSetChanged();
     }
 
     // Member Method - Method ----------------------------------------------------
@@ -117,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         emailETXT.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                Log.i(TAG, "onEditorAction() actiondId : " + actionId);
+                //Log.i(TAG, "onEditorAction() actiondId : " + actionId);
                 if(actionId == EditorInfo.IME_ACTION_DONE) {
                     imm.hideSoftInputFromWindow(emailETXT.getWindowToken(), 0);
                 }
@@ -125,13 +124,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // ListView ClickListener 설정
-        addressLST.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });
     }
 
     // 3개 입력 필드 초기화 --------------------------------------------------------
