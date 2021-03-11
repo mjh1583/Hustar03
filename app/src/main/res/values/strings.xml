@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ExamList</string>
+    <string name="add">ADD</string>
+    <string name="name">NAME</string>
+    <string name="area">AREA</string>
+    <string-array name="fruits">
+        <item>apple</item>
+        <item>banana</item>
+        <item>cherry</item>
+        <item>dragon fruit</item>
+        <item>e</item>
+    </string-array>
+</resources>
