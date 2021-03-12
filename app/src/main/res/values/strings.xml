@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExamIntent</string>
+    <string name="go">GO</string>
+    <string name="go_with_data">GO With Data</string>
+    <string name="go_with_object">GO With Object</string>
+    <string name="go_back">GO BACK</string>
+    <string name="nothing">Nothing</string>
+</resources>
