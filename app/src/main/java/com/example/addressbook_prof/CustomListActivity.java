@@ -4,7 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ClipData;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,5 +44,28 @@ public class CustomListActivity extends AppCompatActivity {
         adapter = new ItemDataAdapter(CustomListActivity.this, R.layout.item_data, dataArrays);
 
         dataLST.setAdapter(adapter);
+
+        dataLST.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(CustomListActivity.this,
+                        "Click => " + ((TextView)view.findViewById(R.id.nameTXT)).getText() + " position : " + position + " id : " + id,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void onClick(View v) {
+        if(D) Log.i(TAG, "onClick()");
+        switch (v.getId()) {
+            case R.id.nameTXT:
+            case R.id.phoneTXT:
+            case R.id.emailTXT:
+                Log.i(TAG, "TEXT => " + ((TextView)v).getText());
+                break;
+            case R.id.iconIMG:
+                Log.i(TAG, "IMAGE");
+                break;
+        }
     }
 }
