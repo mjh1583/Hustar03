@@ -8,7 +8,13 @@ public class AppConstant {
     public static final int ITEM_GO_WITH_OBJECT = 2;
     public static final int ITEM_GO_BACK = 3;
 
+    // Request Code
+    public static final int REQ_DATA_CODE = 1000;
+
     // Data Kry
     public static final String KEY_NAME = "NAME";
     public static final String KEY_PHONE = "PHONE";
+    public static final String KEY_NAMES = "NAMES";
+    public static final String KEY_PERSON = "PERSON";
+    public static final String KEY_PERSONS = "PERSONS";
 }

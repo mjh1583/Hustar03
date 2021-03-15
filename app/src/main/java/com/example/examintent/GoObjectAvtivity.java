@@ -1,19 +1,19 @@
 package com.example.examintent;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
 
-public class GoAvtivity extends AppCompatActivity {
+public class GoObjectAvtivity extends AppCompatActivity {
     // Member Variable -----------------------------------------------------------------------------
     private final boolean               D = true;
-    private final String                TAG = "GoActivity";
+    private final String                TAG = "GoObjectActivity";
 
     private TextView                    msgTXT;
 
@@ -32,22 +32,18 @@ public class GoAvtivity extends AppCompatActivity {
     private void init() {
         // 현재 Activity 실행한 Intent 객체 가져오기
         Intent rxIntent = getIntent();
-        //String rxData = rxIntent.getStringExtra(AppConstant.KEY_NAME);
-        ArrayList<String> rxData = (ArrayList<String>) rxIntent.getSerializableExtra(AppConstant.KEY_NAMES);
+
+        ArrayList<Person> rxData = rxIntent.getParcelableArrayListExtra(AppConstant.KEY_PERSONS);
 
         // View 객체 가져오기
         msgTXT = findViewById(R.id.msgTXT);
 
-        //if(rxData != null) msgTXT.setText(rxData);
         if(rxData != null) {
             String data = "";
-
-            // 향상된 for 문
-            for(String str : rxData)
-                data += str + "\n";
-
+            for(int i = 0; i < rxData.size(); i++)
+                data += rxData.get(i).showInfo() + "\n";
+            Log.i(TAG, data);
             msgTXT.setText(data);
         }
-
     }
 }

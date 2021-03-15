@@ -1,5 +1,6 @@
 package com.example.examintent;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Application;
@@ -37,8 +38,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         init();
 
         if(D) Log.i(TAG, "onCreate()");
+    }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case AppConstant.REQ_DATA_CODE:
+                if(resultCode == RESULT_OK) {
+                    if(D) Log.i(TAG, "RESULT DATA = " + data.getStringExtra(AppConstant.KEY_PHONE));
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Fail", Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
     }
 
     @Override
@@ -59,7 +73,37 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 intent = new Intent(MainActivity.this, GoAvtivity.class);
                 intent.putExtra(AppConstant.KEY_NAME,"KIM");
                 intent.putExtra(AppConstant.KEY_PHONE,"010-1234-5678");
+
+                // Primitive Data List와 함께 전달
+                intent = new Intent(MainActivity.this, GoAvtivity.class);
+
+                ArrayList<String> names = new ArrayList<>();
+                names.add("Hong");
+                names.add("Choi");
+                names.add("Park");
+                names.add("Kwon");
+
+                intent.putExtra(AppConstant.KEY_NAMES, names);
+
                 startActivity(intent);
+                break;
+            case AppConstant.ITEM_GO_WITH_OBJECT:
+                // Custom Class Data 전달
+                ArrayList<Person> persons = new ArrayList<>();
+                persons.add(new Person("Tom", "F", 10));
+                persons.add(new Person("Ghwa", "F", 35));
+                persons.add(new Person("Jerry", "M", 14));
+
+                intent = new Intent(MainActivity.this, GoObjectAvtivity.class);
+                intent.putExtra(AppConstant.KEY_PERSONS, persons);
+                startActivity(intent);
+                break;
+            case AppConstant.ITEM_GO_BACK:
+                // 다른 Activity 전환 후 결과 받아오기
+                intent = new Intent(MainActivity.this, GoBackAvtivity.class);
+                startActivityForResult(intent, AppConstant.REQ_DATA_CODE);
+                break;
+            default:
                 break;
         }
     }
