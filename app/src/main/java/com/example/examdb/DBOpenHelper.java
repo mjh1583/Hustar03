@@ -42,7 +42,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         Log.i(TAG, " => DBOpenHelper : onCreate()");
         // Table 생성
-        db.execSQL(DROP_TABLE_MESSAGE);
+        //db.execSQL(DROP_TABLE_MESSAGE);
         db.execSQL(CREATE_TABLE_MESSAGE);
 
     }

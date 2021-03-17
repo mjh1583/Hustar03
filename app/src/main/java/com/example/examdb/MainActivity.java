@@ -13,15 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class MainActivity extends AppCompatActivity {
     // Member Variable -----------------------------------------------------------------------------
     private static final String TAG = "EXAM_DB";
 
-    private DBOpenHelper dbHelper;
-    private SQLiteDatabase db;
+//    private DBOpenHelper dbHelper;
+//    private SQLiteDatabase db;
 
     private EditText titleETXT;
     private EditText messageETXT;
@@ -50,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         viewBTN = findViewById(R.id.viewBTN);
 
         // DB 생성
-        dbHelper = new DBOpenHelper(MainActivity.this);
+        //dbHelper = new DBOpenHelper(MainActivity.this);
+        DBInfo.DB_ADAPTER = new DBAdapter(this);
     }
 
     private void startViewActivity() {
@@ -62,28 +60,33 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-    private int getDataCount() {
-        // select * from message_tbl;
-        Cursor cursor = db.rawQuery("select * from " + DBInfo.TABLE_MESSAGE, null);
-
-        return cursor.getCount();
-    }
+//    private int getDataCount() {
+//        // select * from message_tbl;
+//        Cursor cursor = db.rawQuery("select * from " + DBInfo.TABLE_MESSAGE, null);
+//
+//        return cursor.getCount();
+//    }
 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.addBTN:
                 if(titleETXT.getText().length() > 0 && messageETXT.getText().length() > 0) {
-                    // 1. DB Open
-                    db = dbHelper.getWritableDatabase();
-
-                    // 2. DB Write => Insert
+//                    // 1. DB Open
+//                    db = dbHelper.getWritableDatabase();
+//
+//                    // 2. DB Write => Insert
+//                    ContentValues newData = new ContentValues();
+//                    newData.put(DBInfo.KEY_TITLE, titleETXT.getText().toString());
+//                    newData.put(DBInfo.KEY_CONTENT, messageETXT.getText().toString());
+//                    db.insert(DBInfo.TABLE_MESSAGE, null, newData);
+//                    Log.i(TAG, "=> MainActivity : addBTN : DB ROW COUNT : " + getDataCount());
+//                    // 3. DB Close
+//                    db.close();
                     ContentValues newData = new ContentValues();
                     newData.put(DBInfo.KEY_TITLE, titleETXT.getText().toString());
                     newData.put(DBInfo.KEY_CONTENT, messageETXT.getText().toString());
-                    db.insert(DBInfo.TABLE_MESSAGE, null, newData);
-                    Log.i(TAG, "=> MainActivity : addBTN : DB ROW COUNT : " + getDataCount());
-                    // 3. DB Close
-                    db.close();
+
+                    DBInfo.DB_ADAPTER.insertRow(DBInfo.TABLE_MESSAGE, newData);
                 }
                 else {
                     makeToast("제목과 메세지를 모두 입력하세요");

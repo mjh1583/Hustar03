@@ -4,6 +4,8 @@ package com.example.examdb;
 public class DBInfo {
 
     // DB 관련 상수 ---------------------------------------------------------------------------------
+    public static DBAdapter DB_ADAPTER;
+
     public static final String DB_NAME = "Message.db";
     public static final int DB_VERSION = 1;
 
